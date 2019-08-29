@@ -1,0 +1,16 @@
+{
+  "name": "gk-magic-number",
+  "version": "0.0.1",
+  "description": "Validation of the attached formats in file type forms",
+  // "homepage": "https://github.com/geckodeCO/gk-factory",
+  // "repository": {
+  // 	"type" : "git",
+  // 	"url" : "https://github.com/geckodeCO/gk-factory"
+  //  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gsanchezescobar",
+  "license": "MIT"
+}
