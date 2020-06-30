@@ -1,12 +1,12 @@
 {
-  "name": "gk-magic-number",
+  "name": "gk-magic-numbers",
   "version": "0.0.1",
-  "description": "Validation of the attached formats in file type forms",
-  // "homepage": "https://github.com/geckodeCO/gk-factory",
-  // "repository": {
-  // 	"type" : "git",
-  // 	"url" : "https://github.com/geckodeCO/gk-factory"
-  //  },
+  "description": "Validation of MIME types for attached formats, files or buffers.",
+  "homepage": "https://github.com/geckodeCO/gk-magic-numbers",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/geckodeCO/gk-magic-numbers"
+   },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
