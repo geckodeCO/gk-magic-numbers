@@ -1,27 +1,27 @@
-const mimes = require('./data/mime.js');
-var mime = mimes.mimes;
+'use strict'
+const fs    = require('fs')
+const mimes = require('./data/mime.js')
 
-var fs = require('fs');
-
-var data = fs.readFileSync('prueba4.mp3');
-
-var ab = data.buffer;
-
-var buffer_hex = new Buffer(ab, "hex");
-buffer_hex = buffer_hex.slice(0,6);
-
-console.log(buffer_hex);
-
-var type = 'Unknown filetype';
-
-for (var i = 0; i < mime.length ; i++) {
-
-  if (buffer_hex.indexOf(mime[i].mime, 0, 'hex') == 0) {
-    console.log('entro');
-    type = mime[i].type;
+module.exports = {
+  validate: function (file, shouldBe = false) {
+    try {
+      if(!file) throw new Error('File or buffer is required')
+      let mime = mimes.mimes
+      let type = 'Unknown filetype';
+      let data = fs.readFileSync(file)
+      let ab   = data.buffer
+      let buffer_hex = new Buffer(ab, 'ex')
+      buffer_hex = buffer_hex.slice(0,6)
+      for (var i = 0; i < mime.length ; i++) {
+        if (buffer_hex.indexOf(mime[i].pattern, 0, 'hex') == 0) {
+          type = mime[i].type;
+          break
+        }
+      }
+      if (shouldBe) return type.includes(shouldBe.toLowerCase().trim())
+      return type
+    } catch (e) {
+      return e.message
+    }
   }
 }
-
-console.log(type);
-
-// nota si buffer.indexof es igual a 0 significa que si empieza por el siguiente mime
